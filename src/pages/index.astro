@@ -1,0 +1,132 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+    <main style="background-color: #1c1917; min-height: 100vh; width: 100%; overflow-x: hidden;">
+        
+        <section style="position: relative; height: 100vh; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: white; overflow: hidden; background-color: #1c1917;">
+            <div style="position: absolute; inset: 0; opacity: 0.4; background-image: url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=2070&auto=format&fit=crop'); background-size: cover; background-position: center; height: 100%; width: 100%;"></div>
+            <div style="position: relative; z-index: 10; padding: 0 24px;">
+                <span style="color: #f59e0b; letter-spacing: 0.5em; text-transform: uppercase; font-size: 0.75rem; margin-bottom: 16px; display: block;">Spartanburg, SC</span>
+                <h1 style="font-size: clamp(3.5rem, 8vw, 8rem); font-weight: bold; text-transform: uppercase; font-style: italic; letter-spacing: -0.05em; margin: 0 0 16px 0; font-family: 'Playfair Display', serif;">Heirloom</h1>
+                <div style="height: 1px; width: 96px; background-color: #b45309; margin: 0 auto 32px auto;"></div>
+                <p style="font-size: 1.1rem; letter-spacing: 0.3em; font-weight: 300; text-transform: uppercase; color: #d6d3d1; font-family: 'Inter', sans-serif;">A Milltown Eatery</p>
+                <div style="margin-top: 48px;">
+                    <a href="#menu" style="padding: 16px 40px; border: 1px solid white; color: white; text-decoration: none; text-transform: uppercase; font-weight: bold; letter-spacing: 0.1em; font-size: 0.7rem; display: inline-block;">Explore the Menu</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="menu" style="background-color: #ffffff; padding: 100px 24px; color: #1c1917; min-height: 100vh;">
+            <div style="max-width: 1200px; margin: 0 auto;">
+                
+                <div style="text-align: center; margin-bottom: 80px;">
+                    <span style="color: #b45309; text-transform: uppercase; letter-spacing: 0.3em; font-size: 0.75rem; font-weight: bold;">Winter 2025</span>
+                    <h2 style="font-size: 3.5rem; font-family: 'Playfair Display', serif; margin-top: 10px;">Dinner Menu</h2>
+                    <p style="font-family: 'Inter', sans-serif; color: #78716c; font-style: italic;">Executive Chef Andy Cochran</p>
+                </div>
+
+                <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: start;">
+                    
+                    <div style="flex: 1; min-width: 320px;">
+                        <h3 style="font-family: 'Playfair Display', serif; font-size: 1.3rem; border-bottom: 1px solid #e7e5e4; padding-bottom: 10px; margin-bottom: 30px; color: #b45309; text-transform: uppercase;">Pass the Plate</h3>
+                        {[
+                            { name: "Deviled Eggs (gf)", price: "9", desc: "jalapeño-orange marmalade, country ham dust" },
+                            { name: "Heirloom Wings (df)", price: "13", desc: "naked, hot honey, carolina gold, buffalo" },
+                            { name: "Brussels Sprouts (df)", price: "12", desc: "apple cider glaze, candied pecans" },
+                            { name: "Smoked Salmon Dip", price: "12", desc: "fried capers, pickled onion, cured egg yolk, crostini" },
+                            { name: "Cornmeal Dusted Mushrooms (df)", price: "11", desc: "garlic-ginger aioli, wasabi microgreens, sweet soy" },
+                            { name: "Roasted Sweet Potatoes (df)", price: "11", desc: "maple-fig whipped goat cheese, bourbon cranberries" },
+                            { name: "Skillet Honey Cornbread", price: "9", desc: "apple and sorghum butter" },
+                            { name: "Coldwater Atlantic Oysters* (gf, df)", price: "3/34", desc: "on the half shell with accompaniments" },
+                            { name: "Oysters Rockefeller (gf)", price: "18/36", desc: "bacon, spinach, alfredo, pecorino" }
+                        ].map(item => (
+                            <div style="margin-bottom: 25px;">
+                                <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-weight: 600;">
+                                    <span>{item.name}</span>
+                                    <span>{item.price}</span>
+                                </div>
+                                <p style="font-size: 0.85rem; color: #78716c; margin-top: 4px; font-style: italic;">{item.desc}</p>
+                            </div>
+                        ))}
+
+                        <div style="margin-top: 50px; padding-top: 30px; border-top: 1px solid #e7e5e4;">
+                            <h3 style="font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-bottom: 25px; color: #b45309; text-transform: uppercase;">Salads & Soup</h3>
+                            {[
+                                { name: "Heirloom", price: "12", desc: "tomato, cucumber, carrot, pickled onion, crouton, buttermilk (gf-, v-)" },
+                                { name: "Winter Kale", price: "14", desc: "apples, cranberries, pecans, beets, sesame vinaigrette (gf, df)" },
+                                { name: "Southern Caesar", price: "12", desc: "romaine, parmesan, cornbread croutons, house caesar" },
+                                { name: "Winter Squash Bisque", price: "9", desc: "smoked crème fraîche, pepitas (gf)" }
+                            ].map(item => (
+                                <div style="margin-bottom: 20px;">
+                                    <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-weight: 600;">
+                                        <span>{item.name}</span>
+                                        <span>{item.price}</span>
+                                    </div>
+                                    <p style="font-size: 0.85rem; color: #78716c; margin-top: 4px; font-style: italic;">{item.desc}</p>
+                                </div>
+                            ))}
+                            <p style="font-family: 'Inter', sans-serif; font-size: 0.75rem; color: #44403c; background: #fcfaf8; padding: 10px; border-left: 2px solid #b45309;">
+                                Add: Chicken +7, Shrimp +8, Salmon* +12
+                            </p>
+                        </div>
+                    </div>
+
+                    <div style="flex: 1.2; min-width: 340px; padding: 30px; background-color: #fcfaf8; border: 1px solid #f5f5f4;">
+                        <h3 style="font-family: 'Playfair Display', serif; font-size: 1.4rem; border-bottom: 1px solid #e7e5e4; padding-bottom: 10px; margin-bottom: 30px; color: #b45309; text-transform: uppercase;">Chef-Inspired Mains</h3>
+                        {[
+                            { name: "Walnut Grove Farms Ribeye*", price: "50", desc: "coffee rub, whipped potatoes, green beans (gf)" },
+                            { name: "Shrimp & Carolina Grits", price: "28", desc: "stone ground grits, peppers, edamame, cream (gf)" },
+                            { name: "Walnut Grove Farms Burger*", price: "20", desc: "double smash patty, cheddar, lusty monk aioli, fries" },
+                            { name: "Pecan Crusted Salmon*", price: "32", desc: "sweet potato purée, broccolini, amaretto brown butter" },
+                            { name: "Fried Pork Cutlet", price: "26", desc: "braised collards, roasted golden beets, apple butter (df)" },
+                            { name: "Duck Confit", price: "37", desc: "cauliflower purée, winter squash, rosemary jus (gf)" },
+                            { name: "Beef Roulade*", price: "33", desc: "skirt steak, mushrooms, whipped potatoes, demi-glace" },
+                            { name: "Heirloom Fried Chicken", price: "26", desc: "maple dijon glaze, heirloom carrots, braised cabbage (df)" },
+                            { name: "Chef Andy’s Gumbo", price: "26", desc: "white rice, chicken, tasso ham, trinity, okra (df)" },
+                            { name: "Trumpet Mushroom “Scallops”", price: "24", desc: "winter squash risotto, broccolini, crispy sage (df, gf, v)" }
+                        ].map(item => (
+                            <div style="margin-bottom: 30px;">
+                                <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-weight: 600;">
+                                    <span>{item.name}</span>
+                                    <span>{item.price}</span>
+                                </div>
+                                <p style="font-size: 0.85rem; color: #78716c; margin-top: 6px; font-style: italic;">{item.desc}</p>
+                            </div>
+                        ))}
+                    </div>
+
+                    <div style="flex: 1; min-width: 300px;">
+                        <h3 style="font-family: 'Playfair Display', serif; font-size: 1.3rem; border-bottom: 1px solid #e7e5e4; padding-bottom: 10px; margin-bottom: 30px; color: #b45309; text-transform: uppercase;">On The Side — 7</h3>
+                        <div style="font-family: 'Inter', sans-serif; color: #44403c; line-height: 2.2; font-size: 0.95rem;">
+                            <p>Bacon Braised Collards (gf, df)</p>
+                            <p>Grilled Broccolini (df, gf, v)</p>
+                            <p>Sautéed Green Beans (gf, df)</p>
+                            <p>Chicken Fat Braised Cabbage (gf)</p>
+                            <p>Heirloom Carrots & Parsnip Purée</p>
+                            <p>Red Skin Whipped Potatoes (gf)</p>
+                        </div>
+
+                        <div style="margin-top: 60px; padding: 20px; border: 1px solid #e7e5e4; background-color: #fafaf9;">
+                            <p style="font-family: 'Inter', sans-serif; font-size: 0.7rem; color: #78716c; line-height: 1.5; margin: 0;">
+                                (gf) gluten free // (df) dairy-free // (v) vegan <br><br>
+                                * consuming raw or undercooked meats, poultry, seafood, shellfish, or eggs may increase your risk of foodborne illness. <br><br>
+                                - automatic gratuity added for parties of six or more
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer style="background-color: #1c1917; color: #78716c; padding: 80px 24px; text-align: center; border-top: 1px solid #292524;">
+            <p style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.3em; color: white; margin-bottom: 10px;">Heirloom Eatery</p>
+            <p style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em;">805 Spartan Blvd, Spartanburg, SC &bull; (864) 913-1212</p>
+            <div style="margin-top: 30px; border-top: 1px solid #292524; padding-top: 20px;">
+                <p style="font-size: 0.6rem; opacity: 0.5;">&copy; 2026 Heirloom. Built by Christopher Creamer.</p>
+            </div>
+        </footer>
+
+    </main>
+</Layout>
